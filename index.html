@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Singh Rawat | Software & Systems Engineer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"><span id="cursor-text"></span></div>
+
+    <!-- Global Particle System -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <!-- Hero Section -->
+            <section class="hero" id="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-cursor="DRAG" data-magnetic style="font-size: clamp(2.5rem, 5.5vw, 5.5rem);">HARSH SINGH<br>RAWAT</h1>
+                    <div class="hero-subtitle">
+                        <span class="tech-label">Software Engineer</span>
+                        <span class="tech-label">Python & C++</span>
+                        <span class="tech-label">Infrastructure</span>
+                    </div>
+                    <div class="status-indicator" data-cursor="STATUS">
+                        <div class="status-dot"></div>
+                        <span class="tech-label small">AVAILABLE FOR INTERESTING PROBLEMS</span>
+                    </div>
+
+                    <!-- View Resume Button (Kept only in Hero) -->
+                    <div style="margin-top: 2.5rem;">
+                        <a href="https://drive.google.com/file/d/1AM-4dfhV4SDuzHyl5hMIsimSnjlW5Yub/view?usp=sharing" target="_blank" class="magnetic-btn btn-outline" data-cursor="OPEN">
+                            <span class="btn-text">VIEW RESUME</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Three.js Container -->
+                <div id="hero-webgl"></div>
+
+                <!-- Floating Objects (Hero) -->
+                <div class="floating-obj" data-speed="0.15" style="top: 15%; right: 10%;">[ PYTHON ]</div>
+                <div class="floating-obj" data-speed="0.25" style="top: 70%; right: 40%;">[ C++ ]</div>
+                <div class="floating-obj" data-speed="-0.1" style="bottom: 20%; left: 5%;">[ LINUX ]</div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about section-pad" id="about">
+                <div class="about-container">
+                    <h2 class="section-title" data-scroll-reveal>ENGINEERED TO<br><span class="gradient-text">UNDERSTAND HOW</span><br>THINGS WORK.</h2>
+                    
+                    <div class="network-graph" id="network-graph">
+                        <canvas id="network-lines"></canvas>
+                        <div class="network-node" style="top: 10%; left: 20%;" data-cursor="EXPAND">Python</div>
+                        <div class="network-node" style="top: 50%; left: 10%;" data-cursor="EXPAND">Algorithms</div>
+                        <div class="network-node" style="top: 30%; left: 50%;" data-cursor="EXPAND">C++</div>
+                        <div class="network-node" style="top: 80%; left: 40%;" data-cursor="EXPAND">Data Pipelines</div>
+                        <div class="network-node" style="top: 60%; left: 80%;" data-cursor="EXPAND">Trading Systems</div>
+                        <div class="network-node" style="top: 20%; left: 85%;" data-cursor="EXPAND">Infrastructure</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="experience section-pad" id="experience">
+                <h2 class="tech-label text-center mb-huge">/EXPERIENCE</h2>
+                <div class="exp-container">
+                    <div class="timeline-line">
+                        <div class="timeline-progress"></div>
+                    </div>
+                    
+                    <!-- AlphaGrep -->
+                    <div class="timeline-node" data-scroll-reveal>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="tech-label glow">JAN 2025 - PRESENT</span>
+                            <h3>ALPHAGREP</h3>
+                            <h4 class="role-subtitle">Analyst (Python Developer) • Gift City, India</h4>
+                            <ul class="neon-list">
+                                <li><strong>UK Fund Accounting:</strong> Built accounting pipelines covering cash flows, PnL attribution, and withholding tax via Python and SQL. Orchestrated Flask fund backend with Airflow DAGs.</li>
+                                <li><strong>Deployer:</strong> Built a Python/TCP deployment server managing config releases across hundreds of machines. Created deployment workflows and a Redis-backed cron rollout scheduler.</li>
+                                <li><strong>CMS & RMS:</strong> Developed a visual Query Builder UI for configuration edits without SQL, and automated daily/monthly risk reporting using ReportLab and Dash.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- BNKM India -->
+                    <div class="timeline-node" data-scroll-reveal>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="tech-label glow">MAY 2024 - NOV 2024</span>
+                            <h3>BNKM INDIA</h3>
+                            <h4 class="role-subtitle">Associate Software Developer • India</h4>
+                            <ul class="neon-list">
+                                <li>Helped implement a highly performant ERP system to streamline manufacturing and inventory tracking.</li>
+                                <li>Built robust API integrations linking shop floor systems directly with the e-commerce platform.</li>
+                                <li>Supported dashboards and predictive maintenance systems that tangibly reduced equipment downtime.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Caarya -->
+                    <div class="timeline-node" data-scroll-reveal>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="tech-label glow">NOV 2023 - JAN 2024</span>
+                            <h3>CAARYA</h3>
+                            <h4 class="role-subtitle">Data Science Intern • Hyderabad, India</h4>
+                            <ul class="neon-list">
+                                <li>Engineered robust <strong>Python</strong> data pipelines and automated <strong>web scraping</strong> architecture to aggregate and process large-scale datasets.</li>
+                                <li>Performed exploratory data analysis and structuring to support downstream analytical modeling tasks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="floating-obj" data-speed="0.2" style="top: 50%; right: 15%;">[ SQL ]</div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="projects section-pad" id="projects">
+                <h2 class="tech-label text-center mb-huge">/SELECTED_WORKS</h2>
+                
+                <!-- Project 1 -->
+                <div class="project-panel" data-cursor="EXPLORE">
+                    <div class="project-info">
+                        <h3 class="project-title" data-magnetic>FEC SCHEME CLASSIFIER</h3>
+                        <p class="project-desc">A blind classifier built with a 7-layer RNN (3 LSTM + 4 Dense) in TensorFlow & Keras to accurately identify Forward Error Correction schemes from demodulated signals.</p>
+                        <div class="project-link-indicator">Tensorflow • Keras • RNN</div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="fec-visual">
+                            <div class="signal-group">
+                                <div class="signal-bar"></div>
+                                <div class="signal-bar"></div>
+                                <div class="signal-bar"></div>
+                                <div class="signal-bar"></div>
+                                <div class="signal-bar"></div>
+                            </div>
+                            <div class="nn-flow">→</div>
+                            <div class="nn-layers">
+                                <div class="layer lstm">LSTM_128</div>
+                                <div class="layer dense">DENSE_32</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-panel reverse" data-cursor="EXPLORE">
+                    <div class="project-visual">
+                        <div class="crypto-visual">
+                            <div class="crypto-block">
+                                <div class="block-header">BLOCK_#801</div>
+                                <div class="block-hash">TX: 0x9fA2...<br>MRKL: a1b2...</div>
+                            </div>
+                            <div class="block-link"></div>
+                            <div class="crypto-block active">
+                                <div class="block-header">BLOCK_#802 (MINING)</div>
+                                <div class="block-hash">NONCE: 492011<br>DIFF: 2.1e12</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title" data-magnetic>BITCOIN BLOCK MINER</h3>
+                        <p class="project-desc">A Bitcoin consensus simulator designed for block construction via transaction filtering, script evaluation, and Merkle root calculation using Python and ECDSA.</p>
+                        <div class="project-link-indicator">Python • ECDSA • Cryptography</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section class="achievements section-pad" id="achievements">
+                <h2 class="tech-label text-center mb-huge">/ACHIEVEMENTS</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card" data-scroll-reveal>
+                        <div class="ach-icon">🏆</div>
+                        <h3>Smart India Hackathon 2023</h3>
+                        <p>Finalist, placed in the top 2% among 44,000+ competing teams nationally.</p>
+                    </div>
+                    <div class="achievement-card" data-scroll-reveal>
+                        <div class="ach-icon">₿</div>
+                        <h3>Summer of Bitcoin 2023</h3>
+                        <p>Selected participant. Gained hands-on experience in open-source Bitcoin core development.</p>
+                    </div>
+                    <div class="achievement-card" data-scroll-reveal>
+                        <div class="ach-icon">🤖</div>
+                        <h3>e-Yantra Robotics 2023</h3>
+                        <p>Semi-Finalist. Proudly represented the institute in a 4-person engineering team.</p>
+                    </div>
+                    <div class="achievement-card" data-scroll-reveal>
+                        <div class="ach-icon">💻</div>
+                        <h3>Competitive Programming</h3>
+                        <p><strong>Codeforces:</strong> Ranked Specialist (Rating 1510) <br> <strong>CodeChef:</strong> Achieved 3★ Rating</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="skills section-pad" id="skills">
+                <h2 class="tech-label text-center mb-huge">/TECH_STACK</h2>
+                <div class="constellation-container" id="constellation">
+                    <!-- Nodes injected via JS -->
+                </div>
+                <div class="floating-obj" data-speed="-0.15" style="top: 20%; right: 5%;">[ AIRFLOW ]</div>
+                <div class="floating-obj" data-speed="0.1" style="bottom: 10%; left: 15%;">[ MONGODB ]</div>
+            </section>
+
+            <!-- Code Section -->
+            <section class="code-section section-pad" id="code-section">
+                <div class="code-container">
+                    <h2 class="section-title">THE WAY I THINK</h2>
+                    <div class="editor-window">
+                        <div class="editor-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="tech-label">mindset.py</span>
+                        </div>
+                        <pre><code id="typing-code"></code><span class="blinking-cursor">_</span></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact section-pad" id="contact">
+                <div class="contact-orb"></div>
+                <div class="contact-content">
+                    <h2 class="huge-text" data-scroll-reveal>LET'S BUILD<br>SOMETHING<br><span class="gradient-text">INTERESTING.</span></h2>
+                    
+                    <div class="contact-links" style="flex-wrap: wrap; max-width: 900px; margin: 0 auto; gap: 1rem;">
+                        <a href="mailto:harshrawat349@gmail.com" class="magnetic-btn" data-cursor="EMAIL">
+                            <span class="btn-text">EMAIL</span>
+                        </a>
+                        <a href="https://linkedin.com/in/harsh-singh-rawat" target="_blank" class="magnetic-btn" data-cursor="OPEN">
+                            <span class="btn-text">LINKEDIN</span>
+                        </a>
+                        <a href="https://github.com/harshrawat349" target="_blank" class="magnetic-btn" data-cursor="OPEN">
+                            <span class="btn-text">GITHUB</span>
+                        </a>
+                        <a href="https://codeforces.com/profile/PAINop787" target="_blank" class="magnetic-btn" data-cursor="OPEN">
+                            <span class="btn-text">CODEFORCES</span>
+                        </a>
+                        <a href="https://www.codechef.com/users/pain787" target="_blank" class="magnetic-btn" data-cursor="OPEN">
+                            <span class="btn-text">CODECHEF</span>
+                        </a>
+                    </div>
+                    <!-- Removed duplicate view resume button from here -->
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
